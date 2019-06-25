@@ -1,0 +1,111 @@
+<html>
+	<head>
+	  <title>My Application</title>
+	  <link href="./images/flower02.jpeg" rel="icon" />
+	  <link href="./css/style.css" rel="stylesheet" />
+	  <meta charset="UTF-8">
+	  <title>Firebase 1</title>
+	  <script type="text/javascript" src="js/qrcode.js"></script>
+	  <script type="text/javascript" src="js/html5-qrcode.js"></script>
+	  <script src="libraries/p5.js" type="text/javascript"></script>
+	  <script src="libraries/p5.dom.js" type="text/javascript"></script>
+
+	  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+	  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-storage.js"></script>
+      <script src="js/sketch.js" type="text/javascript"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	</head>
+	<body>
+	<div id="container">
+	 <div id="header">
+	 	<div id="header1">
+	 		<br>
+	 		<center>
+	 		<img src="./images/flower02.jpeg" height="100" width="250"/>
+	 		</center>
+	 	</div>
+	 	<div id="header2">
+	 		<center>
+	 		<br>
+	 		<h1>LAB SOFTWARE</h1>
+			<br>
+	 		<b>A simple platform to manage your lab.....</b>
+	 		</center>
+	 	</div>
+	 </div>	
+	 <div id="nav">
+	 	<ul id="menuul">
+	 
+		<a href="remove.html" title="Remove a component"><li>Remove a component</li></a>
+		<a href="borrow.html" title="Borrow a component"><li>Borrow a component</li></a>
+		<a href="revoke.html" title="Revoke a component"><li>Revoke a component</li></a>
+		<a href="detail.html" title="Detail of a component"><li>Detail of a component</li></a>
+		<a href="removeuser.html" title="block a User"><li>Block a User</li></a>
+		<a href="index.html" title="logout"><li>Log Out</li></a>
+	 	</ul>
+	 	</ul>
+	 </div>	
+	 <div id="content">
+	 	<div>
+		  <center>
+			<h1>INSERT THE FOLLOWING DATA TO CREATE A COMPONENT</h1>
+			<div style="margin-top: 30px;">
+				<label for="name" class="add-label">Component Name</label>
+				<input value="" id="name" placeholder="component name"></input><br/><br>
+				<label for="diagram" class="add-label">Component Diagram</label>
+				<input width="" type="file" accept="image/*" value="aaa"  id="diagram" placeholder="Upload Diagram"></input><br/><br/>
+				<div class="row">
+					<label for="desc" class="add-label">Component Description</label>
+					<textarea value="" id="desc" placeholder="component description"></textarea><br><br>
+				</div>
+				<div class="row">
+					<label  for="use" class="add-label">Component Usage</label>
+					<textarea  value="" id="use" placeholder="component usage"></textarea><br><br>
+				</div>
+				<label for="quantity" class="add-label">Component quantity</label>
+				<input value="" type="number" id="quantity" placeholder="component quantity"></input><br/><br>
+				<input style="width: 15%;" type="button" id="submit" value="Submit">
+			</div>
+		  </center>	
+	    </div>
+   	    <div id="qr">
+          <div><h3>QR CODE OF Component : </h3></div><br>
+          <div id="qrcode"></div>
+		  <button type="submit" class="btn btn-success btn-default" id="show_button" onclick="printDiv('qrcode')"><span class="fa fa-print"></span> Print QR CODE</button>
+		</div>
+	 </div>	
+	 <div id="footer">
+	 <br>
+		<center>
+			<h1>
+				All Right Reserved &copy; 2019-2020, Design By Aaditya and Shreyansh
+			</h1>
+		</center>
+	 </div>	
+	</div>	
+	<script type="text/javascript">
+    var button = document.getElementById('show_button')
+    button.addEventListener('click',hideshow,false);
+
+    function hideshow() {
+        document.getElementById('show_button').style.display = 'block'; 
+        this.style.display = 'none'
+    }   
+</script>
+<script type="text/javascript">
+function printDiv(divName) {
+    var printContents = document.getElementById(divName).innerHTML;
+    var originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
+}
+</script>
+	</body>
+</html>

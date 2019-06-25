@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>My Application</title>
+    <link href="./images/flower02.jpeg" rel="icon" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="js/initialise.js"></script>
+    <script src="js/borrowComponent.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <div id="header1">
+          <br />
+          <center>
+            <img src="./images/flower02.jpeg" height="100" width="250" />
+          </center>
+        </div>
+        <div id="header2">
+          <center>
+            <br />
+            <h1>LAB SOFTWARE</h1>
+            <br />
+            <b>A simple platform to manage your lab.....</b>
+          </center>
+        </div>
+      </div>
+      <div id="nav">
+        <ul id="menuul">
+          <a href="add.html" title="Add Component"><li>Add Component</li></a>
+          <a href="remove.html" title="Remove a component"
+            ><li>Remove a component</li></a
+          >
+
+          <a href="revoke.html" title="Revoke a component"
+            ><li>Revoke a component</li></a
+          >
+          <a href="detail.html" title="Detail of a component"
+            ><li>Detail of a component</li></a
+          >
+          <a href="removeuser.html" title="block a User"
+            ><li>Block a User</li></a
+          >
+          <a href="index.html" title="logout"><li>Log Out</li></a>
+        </ul>
+      </div>
+      <div id="content">
+        <br />
+        <center>
+          <input
+            type="text"
+            id="email"
+            placeholder="Borrower's Email"
+          /><br /><br />
+          <input
+            type="text"
+            id="component"
+            placeholder="Component name"
+          /><br /><br />
+          <input
+            type="number"
+            id="qty"
+            placeholder="Enter Quantity"
+          /><br /><br />
+          <button id="borrowButton">Issue the component</button>
+        </center>
+      </div>
+      <div id="footer">
+        <br />
+        <center>
+          <h1>
+            All Right Reserved &copy; 2019-2020, Design By Aaditya and Shreyansh
+          </h1>
+        </center>
+      </div>
+    </div>
+  </body>
+</html>
